@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 import { createEpicMiddleware } from "redux-observable";
 import rootReducer from "./reducers";
 import rootEpic from "./epics";
+import App from "./components/App";
 
 const epicMiddleware = createEpicMiddleware();
 function configureStore() {
@@ -18,7 +19,7 @@ function configureStore() {
 const Root = () => {
   return (
     <Provider store={configureStore()}>
-      <div>hello</div>
+      <App />
     </Provider>
   );
 };

@@ -1,12 +1,40 @@
 import React, { Component } from "react";
-import { connect } from "redux";
+import { connect } from "react-redux";
+import { fetchUser, increment, incrementIfOdd } from "../actions";
 
 class App extends Component {
-  render() {
-    console.log(this.props);
+  constructor() {
+    super();
 
-    return <div>hello</div>;
+    this.state = { value: "" };
+  }
+
+  handleSearch() {
+    const { value } = this.state;
+    this.props.dispatch(fetchUser(value));
+  }
+
+  render() {
+    return (
+      <div>
+        <input
+          type="text"
+          value={this.state.value}
+          onChange={e => this.setState({ value: e.target.value })}
+        />
+        <button onClick={() => this.handleSearch()}>検索</button>
+        <div>
+          <p>{this.props.counter}</p>
+          <button onClick={() => this.props.dispatch(increment())}>+</button>
+          <button onClick={() => this.props.dispatch(incrementIfOdd())}>
+            odd+
+          </button>
+        </div>
+      </div>
+    );
   }
 }
 
-export default connect()(App);
+const mapStateToProps = state => state;
+
+export default connect(mapStateToProps)(App);
