@@ -12,7 +12,11 @@
   "license": "ISC",
   "dependencies": {
     "react": "^16.6.3",
-    "react-dom": "^16.6.3"
+    "react-dom": "^16.6.3",
+    "react-redux": "^5.1.1",
+    "redux": "^4.0.1",
+    "redux-observable": "^1.0.0",
+    "rxjs": "^6.3.3"
   },
   "devDependencies": {
     "@babel/core": "^7.1.5",
