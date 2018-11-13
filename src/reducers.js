@@ -1,4 +1,5 @@
 import { combineReducers } from "redux";
+import { INCREMENT, FETCH_USER_FULFILLED } from "./actions";
 
 const counter = (state = 0, action) => {
   switch (action.type) {
@@ -24,7 +25,7 @@ const users = (state = {}, action) => {
   }
 };
 
-export const rootReducer = combineReducers({
+export default combineReducers({
   counter,
   users
 });

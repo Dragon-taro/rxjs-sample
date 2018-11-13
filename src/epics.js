@@ -1,4 +1,6 @@
 import { ajax } from "rxjs/ajax";
+import { filter, map, mergeMap } from "rxjs/operators";
+import { combineEpics, ofType } from "redux-observable";
 import {
   INCREMENT_IF_ODD,
   FETCH_USER,
@@ -23,4 +25,4 @@ const fetchUserEpic = action$ =>
     )
   );
 
-export const rootEpic = combineEpics(incrementIfOddEpic, fetchUserEpic);
+export default combineEpics(incrementIfOddEpic, fetchUserEpic);

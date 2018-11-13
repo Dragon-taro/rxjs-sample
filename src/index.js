@@ -15,7 +15,7 @@ function configureStore() {
   return store;
 }
 
-const App = () => {
+const Root = () => {
   return (
     <Provider store={configureStore()}>
       <div>hello</div>
@@ -23,4 +23,4 @@ const App = () => {
   );
 };
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<Root />, document.getElementById("root"));
