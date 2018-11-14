@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchUser, increment, incrementIfOdd } from "../actions";
+import { fetchUser } from "../modules/User";
+import { increment, incrementIfOdd } from "../modules/Counter";
 
 class App extends Component {
   constructor() {

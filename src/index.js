@@ -3,8 +3,7 @@ import ReactDOM from "react-dom";
 import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import { createEpicMiddleware } from "redux-observable";
-import rootReducer from "./reducers";
-import rootEpic from "./epics";
+import { rootReducer, rootEpic } from "./modules/root";
 import App from "./components/App";
 
 const epicMiddleware = createEpicMiddleware();
